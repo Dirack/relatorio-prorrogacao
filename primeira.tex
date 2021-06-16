@@ -48,5 +48,21 @@ em amarelo são os pares $t_0$ e $m_0$ escolhidos.}
 O critério de otimização do gradiente de velocidades é 
 TODO: critério de otimização semblance, tempos de trânsito e CRE
 
+Nesta etapa, é utilizado o algoritmo Very Fast Simulated Annealing (VFSA) para realizar a otimização do
+gradiente de profundidade do modelo de velocidades. O modelo de velocidades é atualizado a cada iteração do
+algoritmo para cada valor do gradiente e segue a seguinte função de velocidades:
+
+\begin{equation}
+\label{eq:4.1}
+v(z)=z g_z+v_0
+\end{equation}
+
+Em \ref{eq:4.1} a velocidade $v(z)$ cresce linearmente com a profundidade.
+
+FOTO MODELO GZ
+
+O critério de otimização do gradiente de velocidades é 
+TODO: critério de otimização semblance, tempos de trânsito e CRE
+
 
 
