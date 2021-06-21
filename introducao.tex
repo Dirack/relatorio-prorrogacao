@@ -1,10 +1,29 @@
 \chapter{INTRODUÇÃO}
 \label{cap1}
 
-A estratégia de inversão mudou da focalização de diffrações para a utilização da stereotomografia
+A estratégia utilizada para a inversão do modelo de velocidades apresentada na
+qualificação de soutorado \cite{relatorio} foi abandonada em prol de uma nova estratégia de
+inversão baseada na NIP tomografia e na stereo tomografia \cite{niptomo,stereo}.
+A inversão do modelo de velocidades a partir da simulação e focalização
+de difrações sobre a seção empilhada \cite{relatorio}  
+possui uma séria limitação: Esta necessita do modelo de velocidades
+de sobretempo normal (informação a priori) para simular as difrações sobre a seção empilhada e realizar a inversão através da focalização destas difrações. O empilhamento Elemento de Reflaxão Comum (ERC)
+não produz o modelo de velocidades de sobretempo normal,
+a seção empilhada é obtida a partir dos parâmetros $R_{NIP}$ e $\beta_0$ do método 
+Superfície de Reflexão Comum (SRC) de afastamento nulo.
 
-Eu não estava pensando em uma comparação entre os dois métodos, mas é possível fazê-la. Na realidade, eu decidi utilizar a inversão com a NIP tomografia por causa da limitação da inversão utilizando o método Cameron (2008): Eu precisava inserir o modelo de velocidades (informação a priori) para simular as difrações e realizar a inversão através da focalização das difrações. Este método é feito originalmente utilizando o modelo de velocidades NMO, e como o empilhamento CRE que eu fiz não produz o modelo de velocidades NMO, apenas os parâmetros do CRS (RNIP e Beta), eu abandonei esta estratégia e passei a trabalhar na NIP tomografia.
-
+Assim, neste relatório, propomos uma nova estratégia para a inversão do modelo de velocidades em
+profundidade utilizando um método baseado na NIP tomografia e na stereo tomografia: A partir da seção
+empilhada ERC obtida \cite{relatorio} realizamos o picking dos tempos de trânsito sobre os eventos de
+reflexão na seção. Estes tempos de trânsito são utilizados para localizar fontes pontuais sobre os relfetores
+em um modelo de velocidades de background. Isto é feito através do traçamento de raios normais a partir
+da superfície de aquisição em direção ao modelo em profundidade. A direção inicial do raio normal
+é dada pelo ângulo de incidência $\beta_0$.
+Realizamos a modelagem direta traçando raios de reflexão a partir destas fontes pontuais em profundidade
+até atingirem a superfície de reflexão e comparamos os tempos de trânsito obtidos com os tempos de trânsito
+calculados através da fórmula do ERC. O pressuposto da nossa estratégia de inversão é que os tempos
+de trânsito obtidos com o traçamento de raios serão próximos aos tempos de trânsito calculados para
+o modelo de velocidades ótimo.
 
 
 
