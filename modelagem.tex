@@ -35,13 +35,13 @@ empilhada ERC através do empilhamento ERC.}
 \begin{center}
  Fonte: Do Autor.
 \end{center}
-\label{fig:2.1}
+\label{fig:2.2}
 \end{figure}
 
 
 Então, após a obtenção da seção empilhada utilizando o empilhamento ERC \cite{relatorio}, realizamos
 o picking iterativo dos tempos de trânsito sobre os refletores na seção empilhada ERC (Ver Figura \ref{fig:2.1}). Esta seção foi produzida a partir do modelo de velocidades da Figura \ref{fig:2.2},
-com três camadas com as velocidades 1.508, 1.690 e 2.0 respectivamente.
+com três camadas com as velocidades $1.508Km/s$, $1.690Km/s$ e $2.000Km/s$ respectivamente.
 Estes tempos de trânsito são os tempos duplos $t_0$ dos raios normais que partem da coordenada $m_0$
 de um PMC na superfície de aquisição, e incidem normais ao refletor no ponto PIN.
 
@@ -70,13 +70,8 @@ A partir do traçamento de raios será obtida a localização das fontes PIN em 
 \begin{center}
  Fonte: Do Autor.
 \end{center}
-\label{fig:2.2}
+\label{fig:2.3}
 \end{figure}
-
-Após a determinação das fontes, a modelagem direta é realizada através do traçamento de pares de raios de reflexão
-iniciando nas posições das fontes PIN determinadas anteriormente, simulando uma família ERC de raios de reflexão.
-Este leque de raios é lançado em direção à superfície de aquisição,
-os tempos de trânsito dos raios são armazenados \cite{stereo}.
 
 \begin{figure}[H]
 \caption{Exemplo de traçamento de raio a partir de uma fonte pontual em direção a superfície de aquisição.
@@ -88,11 +83,15 @@ Os tempos de trânsito do leque de raios é armazenado.}
 \begin{center}
  Fonte: Do Autor.
 \end{center}
-\label{fig:2.3}
+\label{fig:2.4}
 \end{figure}
 
+Após a determinação das fontes, a modelagem direta é realizada através do traçamento de pares de raios de reflexão
+iniciando nas posições das fontes PIN determinadas anteriormente, simulando uma família ERC de raios de reflexão.
+Este leque de raios é lançado em direção à superfície de aquisição,
+os tempos de trânsito dos raios são armazenados \cite{stereo}.
 Os tempos de trânsito dos raios de reflexão obtidos no traçamento de raios são comparados com os tempos
-de trânsito da aproximação de tempo de trânsito ERC a seguir \cite{cre,relatorio}:
+de trânsito da aproximação de tempo de trânsito ERC a seguir \cite{cre}:
 
 \begin{multline}
 \label{eq:2.1}
@@ -113,6 +112,10 @@ L_2 = \left[ \sum_{i=1}^{ND} |e_i|^2 \right]^\frac{1}{2}
 
 
 Esta estratégia de modelagem direta será utilizada nas etapas de inversão do modelos de velocidades nos
-próximos capítulos. A norma dois das diferenças nos tempos de trânsito serão utilizadas como critério de
-convergência do modelo de velocidades.
+próximos capítulos. A norma dois das diferenças nos tempos de trânsito (Equação \ref{eq:2.2})
+será utilizada como critério de
+convergência do modelo de velocidades: O modelo de velocidades otimizado deverá produzir
+o valor mínimo das diferenças entre os tempos de trânsito obtidos com o traçamento de raios
+e calculados com a fórmula do ERC (Equação \ref{eq:2.1}). Assim, a estratégia de inversão consiste em
+encontrar o modelo de velocidades que produz o mínimo global da Equação \ref{eq:2.2}.
 
